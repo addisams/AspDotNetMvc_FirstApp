@@ -1,0 +1,93 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.7.1.js"></script>
+    <script src="~/Scripts/popper.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <title>Student Details</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-success navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="/home/index" class="nav-link">Home</a>
+                <a href="/home/products" class="nav-link">Products</a>
+                <a href="/home/contacts" class="nav-link">Contacts</a>
+
+            </li>
+
+        </ul>
+    </nav>
+    @*razor code block*@
+    @{
+        string studentResult;
+        if(ViewBag.marks>=35)
+        {
+            studentResult = "pass";
+        }
+        else
+        {
+            studentResult = "Fail";
+        }
+
+     }
+    <div class="container-fluid">
+        <table class="table">
+            <tr>
+                <td>Student Id</td>
+                <td>@ViewBag.studentId</td>
+            </tr>
+            <tr>
+                <td>Student Name</td>
+                <td>@ViewBag.studentName</td>
+            </tr>
+            <tr>
+                <td>Student Mark</td>
+                <td>@ViewBag.marks</td>
+            </tr>
+            <tr>
+                <td>Result</td>
+                <td>@studentResult</td>
+            </tr>
+            <tr>
+                @if (studentResult == "pass")
+                {
+                    <span class="text-success fw-bolder">Congretulations</span>
+                }
+                else
+                {
+                    <span class="text-danger fw-bolder">Better Luck Next Time</span>
+                }
+            </tr>
+
+            <tr>
+                <td>Semester</td>
+                <td>
+                    <ul>
+                        @for (var i = 1; i <= ViewBag.noOfSem; i++)
+                        {
+                            <li class="text-success">@i</li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Subjects</td>
+                <td>
+                    <ul>
+                        @foreach (var subject in ViewBag.subjects)
+                        {
+                            <li class="text-success">@subject</li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
