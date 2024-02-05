@@ -64,5 +64,24 @@ namespace MyFirstApp.Controllers
             ViewBag.subjects=new List<string>() {"maths","physics","chemistry" };
             return View();
         }
+        public ActionResult RequestExample()
+        {
+            ViewBag.url=Request.Url;
+            ViewBag.physicalRequestPath = Request.PhysicalApplicationPath;
+            ViewBag.path = Request.Path;
+            ViewBag.browserType = Request.Browser.Type;
+            ViewBag.queryString = Request.QueryString["n"];
+            ViewBag.Headers = Request.Headers["Accept"];
+            ViewBag.methods = Request.HttpMethod;
+
+            return View();
+        }
+        public ActionResult ResponseExample()
+        {
+            Response.Write("response is generated");
+            Response.ContentType = "text/plain";
+            Response.Headers["Server"] = "My Server";
+            return View();
+        }
     }
 }

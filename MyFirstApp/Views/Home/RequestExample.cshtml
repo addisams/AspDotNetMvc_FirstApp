@@ -1,0 +1,72 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.7.1.js"></script>
+    <script src="~/Scripts/popper.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <title>Student Details</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-success navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="/home/index" class="nav-link">Home</a>
+                <a href="/home/products" class="nav-link">Products</a>
+                <a href="/home/contacts" class="nav-link">Contacts</a>
+
+            </li>
+
+        </ul>
+    </nav>
+    @*razor code block*@
+    @{
+        string studentResult;
+        if (ViewBag.marks >= 35)
+        {
+            studentResult = "pass";
+        }
+        else
+        {
+            studentResult = "Fail";
+        }
+
+    }
+    <div class="container-fluid">
+        <table class="table">
+            <tr>
+                <td>url</td>
+                <td>@ViewBag.url</td>
+            </tr>
+            <tr>
+                <td>physicalRequestPath</td>
+                <td>@ViewBag.physicalRequestPath</td>
+            </tr>
+            <tr>
+                <td>path</td>
+                <td>@ViewBag.path</td>
+            </tr>
+            <tr>
+                <td>browserType</td>
+                <td>@ViewBag.browserType</td>
+            </tr>
+            <tr>
+                <td>queryString</td>
+                <td>@ViewBag.queryString</td>
+            </tr>
+            <tr>
+                <td>Headers</td>
+                <td>@ViewBag.Headers</td>
+            </tr>
+            <tr>
+                <td>methods</td>
+                <td>@ViewBag.methods</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
