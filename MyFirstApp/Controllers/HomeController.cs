@@ -75,6 +75,7 @@ namespace MyFirstApp.Controllers
             ViewBag.Headers = Request.Headers["Accept"];
             ViewBag.methods = Request.HttpMethod;
 
+
             return View();
         }
         public ActionResult ResponseExample()
