@@ -251,12 +251,12 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\OurCompanyProducts.cshtml" />
-    <Content Include="Views\Home\Contacts.cshtml" />
     <Content Include="Views\Account\invalidLogin.cshtml" />
     <Content Include="Views\Admin\Dashboard.cshtml" />
     <Content Include="Views\Home\studentDetails.cshtml" />
     <Content Include="Views\Home\RequestExample.cshtml" />
     <Content Include="Views\Home\ResponseExample.cshtml" />
+    <Content Include="Views\Shared\Contacts.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
